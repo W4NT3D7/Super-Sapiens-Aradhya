@@ -40,10 +40,10 @@ require_once __DIR__ . '/includes/header.php';
     </div>
 
     <!-- Wallet Balance Cards -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 reveal-group">
       
       <!-- Primary Cash Balance -->
-      <div class="bg-gradient-to-br from-slate-900 to-slate-950 p-6 rounded-3xl border border-slate-800 shadow-xl relative overflow-hidden">
+      <div class="reveal reveal-pop premium-card bg-gradient-to-br from-slate-900 to-slate-950 p-6 rounded-3xl border border-slate-800 shadow-xl relative overflow-hidden">
         <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-emerald-500/10 rounded-full blur-2xl pointer-events-none"></div>
         <span class="text-[10px] uppercase font-bold text-slate-400 block tracking-wider">Available Cash Balance</span>
         <div class="text-3xl sm:text-4xl font-black text-emerald-400 font-mono mt-1" id="display-wallet-bal">
@@ -55,7 +55,7 @@ require_once __DIR__ . '/includes/header.php';
       </div>
 
       <!-- Margin Locked in Active Trades -->
-      <div class="bg-slate-950/80 p-6 rounded-3xl border border-slate-800 shadow-xl">
+      <div class="reveal reveal-pop premium-card bg-slate-950/80 p-6 rounded-3xl border border-slate-800 shadow-xl">
         <span class="text-[10px] uppercase font-bold text-slate-400 block tracking-wider">Margin Locked in Trades</span>
         <div class="text-3xl font-black text-orange-400 font-mono mt-1">
           ₹<?php echo number_format($locked_margin, 2); ?>
@@ -66,7 +66,7 @@ require_once __DIR__ . '/includes/header.php';
       </div>
 
       <!-- Total Combined Equity -->
-      <div class="bg-slate-950/80 p-6 rounded-3xl border border-slate-800 shadow-xl">
+      <div class="reveal reveal-pop premium-card bg-slate-950/80 p-6 rounded-3xl border border-slate-800 shadow-xl">
         <span class="text-[10px] uppercase font-bold text-slate-400 block tracking-wider">Total Portfolio Equity</span>
         <div class="text-3xl font-black text-white font-mono mt-1">
           ₹<?php echo number_format($user['wallet_balance'] + $locked_margin, 2); ?>

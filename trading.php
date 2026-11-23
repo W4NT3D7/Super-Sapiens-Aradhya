@@ -73,10 +73,10 @@ require_once __DIR__ . '/includes/header.php';
     </div>
 
     <!-- Main Trading Grid: Left (Watchlist 1 col), Center (Chart & Positions 2 cols), Right (Order Ticket 1 col) -->
-    <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-6 reveal-group">
 
       <!-- Column 1: Watchlist & Market Tickers -->
-      <div class="bg-slate-950/80 rounded-3xl border border-slate-800 p-4 space-y-3">
+      <div class="reveal reveal-pop premium-card bg-slate-950/80 rounded-3xl border border-slate-800 p-4 space-y-3">
         <div class="flex items-center justify-between pb-2 border-b border-slate-800">
           <span class="text-xs font-black uppercase text-slate-400 tracking-wider">Talent Contracts</span>
           <span class="text-[10px] text-slate-500">Live F&O</span>
@@ -114,7 +114,7 @@ require_once __DIR__ . '/includes/header.php';
       </div>
 
       <!-- Column 2 & 3: Main Chart, Order Book, Positions (2 Cols Wide) -->
-      <div class="lg:col-span-2 space-y-6">
+      <div class="lg:col-span-2 space-y-6 reveal reveal-pop stagger-1">
         
         <!-- Active Contract Banner & Live Metrics -->
         <div class="bg-slate-950/80 rounded-3xl border border-slate-800 p-5 space-y-4">
@@ -300,7 +300,7 @@ require_once __DIR__ . '/includes/header.php';
       </div>
 
       <!-- Column 4: Order Entry Ticket (Right Terminal) -->
-      <div class="bg-slate-950/90 rounded-3xl border border-slate-800 p-6 space-y-5 shadow-2xl h-fit sticky top-24">
+      <div class="reveal reveal-pop stagger-2 premium-card bg-slate-950/90 rounded-3xl border border-slate-800 p-6 space-y-5 shadow-2xl h-fit sticky top-24">
         
         <div class="border-b border-slate-800 pb-3">
           <span class="text-[9px] uppercase font-bold text-slate-500 tracking-wider font-mono block">ORDER TERMINAL</span>

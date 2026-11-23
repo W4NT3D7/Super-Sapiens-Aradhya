@@ -19,6 +19,9 @@ $page_title = $page_title ?? 'Super Sapiens • Grassroots Athlete Discovery & T
 </head>
 <body class="bg-slate-900 text-slate-100 font-sans antialiased selection:bg-orange-500 selection:text-white min-h-screen flex flex-col">
 
+  <!-- Ambient Scroll Progress Bar -->
+  <div id="scroll-progress-bar"></div>
+
   <!-- Tricolor National Strip -->
   <div class="gov-strip"></div>
 

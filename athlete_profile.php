@@ -49,7 +49,7 @@ require_once __DIR__ . '/includes/header.php';
     </div>
 
     <!-- Athlete Header Card -->
-    <div class="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 rounded-3xl p-6 sm:p-10 border border-slate-700/80 shadow-2xl relative overflow-hidden">
+    <div class="reveal reveal-pop premium-card bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 rounded-3xl p-6 sm:p-10 border border-slate-700/80 shadow-2xl relative overflow-hidden">
       <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 relative z-10">
         
         <div class="flex items-center gap-6">

@@ -101,12 +101,12 @@ require_once __DIR__ . '/includes/header.php';
     </div>
 
     <!-- Feed Items List -->
-    <div class="space-y-6">
+    <div class="space-y-6 reveal-group">
       <?php foreach ($filtered_news as $item): 
         $impact = (float)$item['impact_pct'];
         $is_bullish = ($item['sentiment'] === 'BULLISH');
       ?>
-        <article class="bg-slate-950/80 rounded-3xl border border-slate-800 p-6 sm:p-8 hover:border-slate-700 transition shadow-xl space-y-4 relative overflow-hidden group">
+        <article class="reveal reveal-pop premium-card bg-slate-950/80 rounded-3xl border border-slate-800 p-6 sm:p-8 hover:border-slate-700 transition shadow-xl space-y-4 relative overflow-hidden group">
           
           <!-- Athlete Header & Sentiment Badge -->
           <div class="flex flex-wrap items-center justify-between gap-3">

@@ -4,11 +4,94 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  initScrollProgress();
+  initScrollReveal();
   initCountdown();
   initSportFilter();
   initEligibilityChecker();
   initMobileMenu();
 });
+
+/**
+ * Super Sapiens Premium Scroll Progress Bar
+ */
+function initScrollProgress() {
+  const progressBar = document.getElementById('scroll-progress-bar');
+  if (!progressBar) return;
+
+  function updateProgress() {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const progress = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+    progressBar.style.width = progress + '%';
+  }
+
+  window.addEventListener('scroll', updateProgress, { passive: true });
+  updateProgress();
+}
+
+/**
+ * Super Sapiens Premium Scroll Emergence Engine (IntersectionObserver)
+ * Smoothly pops and reveals elements as the user scrolls down the page.
+ */
+function initScrollReveal() {
+  const selector = '.reveal, .reveal-pop, .reveal-left, .reveal-right, .reveal-fade';
+  const revealElements = document.querySelectorAll(selector);
+
+  // Auto-stagger delay for elements inside a .reveal-group
+  document.querySelectorAll('.reveal-group').forEach(group => {
+    const children = group.querySelectorAll(selector);
+    children.forEach((child, index) => {
+      if (!child.style.transitionDelay && !child.className.includes('stagger-')) {
+        child.style.transitionDelay = `${(index + 1) * 90}ms`;
+      }
+    });
+  });
+
+  if (!('IntersectionObserver' in window)) {
+    // Fallback for older browsers
+    revealElements.forEach(el => el.classList.add('is-visible'));
+    return;
+  }
+
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px 0px -40px 0px',
+    threshold: 0.12
+  };
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  revealElements.forEach(el => {
+    // If element is already in initial viewport on page load, reveal it with slight stagger
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      setTimeout(() => {
+        el.classList.add('is-visible');
+      }, 50);
+      observer.observe(el);
+    } else {
+      observer.observe(el);
+    }
+  });
+
+  // Safety net: reveal any remaining visible elements after initial render
+  setTimeout(() => {
+    revealElements.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight) {
+        el.classList.add('is-visible');
+      }
+    });
+  }, 400);
+}
 
 /**
  * 1. Live Countdown Timer to KIYG 2026 Telangana (Dec 11, 2026)

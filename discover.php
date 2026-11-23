@@ -124,12 +124,12 @@ require_once __DIR__ . '/includes/header.php';
         </a>
       </div>
     <?php else: ?>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 reveal-group">
         <?php foreach ($athletes as $ath): 
           $pct = (float)($ath['pct_change'] ?? 0);
           $price = (float)($ath['current_price'] ?? 100);
         ?>
-          <div class="bg-slate-950/80 rounded-3xl border border-slate-800 p-6 hover:border-slate-700 transition flex flex-col justify-between hover-lift shadow-xl relative overflow-hidden group">
+          <div class="reveal reveal-pop premium-card bg-slate-950/80 rounded-3xl border border-slate-800 p-6 hover:border-slate-700 transition flex flex-col justify-between hover-lift shadow-xl relative overflow-hidden group">
             
             <!-- Top Athlete Header -->
             <div>

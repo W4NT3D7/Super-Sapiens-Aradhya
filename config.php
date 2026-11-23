@@ -64,6 +64,13 @@ if (extension_loaded('pdo_mysql')) {
     $dbs_to_try = array_unique([$db_name, 'khelo_india', 'local']);
 
     foreach ($ports_to_try as $p) {
+        // Fast-fail socket ping so offline ports don't delay page load
+        $sock = @fsockopen($db_host, (int)$p, $errno, $errstr, 0.15);
+        if (!$sock) {
+            continue;
+        }
+        fclose($sock);
+
         foreach ($dbs_to_try as $db) {
             try {
                 $dsn = "mysql:host={$db_host};port={$p};dbname={$db};charset=utf8mb4";

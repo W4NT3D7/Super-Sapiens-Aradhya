@@ -292,3 +292,162 @@ body {
   }
 }
 
+/* ==========================================================================
+   Super Sapiens Premium Scroll Emergence & Motion System
+   ========================================================================== */
+
+/* Top Ambient Scroll Progress Bar */
+#scroll-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3.5px;
+  background: linear-gradient(90deg, #FF6B00 0%, #F59E0B 45%, #00A859 100%);
+  z-index: 99999;
+  width: 0%;
+  box-shadow: 0 0 12px rgba(255, 107, 0, 0.8), 0 0 4px rgba(0, 168, 89, 0.8);
+  pointer-events: none;
+  transition: width 0.08s ease-out;
+}
+
+/* Base Reveal - Upward Emergence with Depth of Field Blur Clear */
+.reveal {
+  opacity: 0;
+  transform: translateY(38px);
+  filter: blur(8px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform, filter;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+/* Pop & Zoom Emergence (For Cards, Stat Badges, Key CTA Panels) */
+.reveal-pop {
+  opacity: 0;
+  transform: scale(0.88) translateY(30px);
+  filter: blur(10px);
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform, filter;
+}
+
+.reveal-pop.is-visible {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  filter: blur(0);
+}
+
+/* Slide in from Left */
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-48px);
+  filter: blur(8px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform, filter;
+}
+
+.reveal-left.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+  filter: blur(0);
+}
+
+/* Slide in from Right */
+.reveal-right {
+  opacity: 0;
+  transform: translateX(48px);
+  filter: blur(8px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform, filter;
+}
+
+.reveal-right.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+  filter: blur(0);
+}
+
+/* Fade Only (For Text, Subtitles, Background Glows) */
+.reveal-fade {
+  opacity: 0;
+  filter: blur(12px);
+  transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 1s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, filter;
+}
+
+.reveal-fade.is-visible {
+  opacity: 1;
+  filter: blur(0);
+}
+
+/* Stagger Delays for Elegant Cascade Waves */
+.stagger-1 { transition-delay: 75ms !important; }
+.stagger-2 { transition-delay: 150ms !important; }
+.stagger-3 { transition-delay: 225ms !important; }
+.stagger-4 { transition-delay: 300ms !important; }
+.stagger-5 { transition-delay: 375ms !important; }
+.stagger-6 { transition-delay: 450ms !important; }
+.stagger-7 { transition-delay: 525ms !important; }
+.stagger-8 { transition-delay: 600ms !important; }
+
+/* Premium Card Hover Effects */
+.premium-card {
+  position: relative;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.premium-card:hover {
+  transform: translateY(-8px) scale(1.018);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6), 
+              0 0 25px rgba(255, 107, 0, 0.2);
+  border-color: rgba(255, 107, 0, 0.5);
+}
+
+.premium-card-emerald:hover {
+  transform: translateY(-8px) scale(1.018);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6), 
+              0 0 25px rgba(0, 168, 89, 0.22);
+  border-color: rgba(0, 168, 89, 0.5);
+}
+
+.premium-card-blue:hover {
+  transform: translateY(-8px) scale(1.018);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6), 
+              0 0 25px rgba(37, 99, 235, 0.22);
+  border-color: rgba(37, 99, 235, 0.5);
+}
+
+/* Pulsing Glow Ambient */
+@keyframes ambientGlow {
+  0%, 100% { opacity: 0.25; transform: scale(1); }
+  50% { opacity: 0.45; transform: scale(1.05); }
+}
+
+.animate-ambient-glow {
+  animation: ambientGlow 6s ease-in-out infinite;
+}
+
+/* Accessibility: Respect Reduced Motion Preferences */
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .reveal-pop, .reveal-left, .reveal-right, .reveal-fade {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
+  }
+}
+

@@ -82,7 +82,7 @@ require_once __DIR__ . '/includes/header.php';
   <div class="container mx-auto px-4 sm:px-6 max-w-5xl space-y-8">
 
     <!-- Top Profile Banner (Requirement 2: Dedicated Profile with Icon) -->
-    <div class="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 rounded-3xl p-6 sm:p-8 border border-slate-700/80 shadow-2xl relative overflow-hidden">
+    <div class="reveal reveal-pop premium-card bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 rounded-3xl p-6 sm:p-8 border border-slate-700/80 shadow-2xl relative overflow-hidden">
       <div class="absolute -right-16 -top-16 w-64 h-64 bg-orange-500/10 rounded-full blur-3xl pointer-events-none"></div>
 
       <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 relative z-10">
